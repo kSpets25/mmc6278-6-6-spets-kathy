@@ -1,14 +1,4 @@
 <!-- 👇Remove this markup when converting to a handlebars template 👇 -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/style.css">
-  <title>Music Store</title>
-</head>
-<body>
 <!-- 👆Remove this markup when converting to a handlebars template👆 -->
   <header>
     <div class="header-container">
@@ -24,14 +14,35 @@
     <section id="saleItems">
 <!-- TODO: 👇Use a handlebars each helper to loop over inventory items👇 -->
       <!-- replace with product id -->
+        {{#each inventory}}
+           <li>{{id}}</li>  
+        {{/each}}
+           
       <a href="/product/1" class="sale-item">
         <div class="item-img-container">
+
           <!-- replace with product image and name -->
+        {{#each inventory}} 
+          <li>
+          {{../image}} 
+          {{../name}}
+          </li>
+         {{/each}}
+        
           <img src="images/strat.jpg" alt="Stratocaster" />
+
           <!-- replace with product description -->
+        {{#each inventory}} 
+          {{../description}}
+        {{/each}}
+        
           <p>One of the most iconic electric guitars ever made.</p>
         </div>
+
   <!-- replace with product name and price -->
+        {{#each inventory}} 
+          {{../name}} {{../price}}
+        {{/each}}
         <p>Stratocaster</p>
         <p>$599.99</p>
       </a>
@@ -42,6 +53,4 @@
     <p>&copy; Music Shop</p>
   </footer>
 <!-- 👇Remove this markup when converting to a handlebars template 👇 -->
-</body>
-</html>
 <!-- 👆Remove this markup when converting to a handlebars template👆 -->
