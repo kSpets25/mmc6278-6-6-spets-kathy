@@ -8,7 +8,8 @@ router.get('/', async (req, res) => {
 
   // TODO: Convert the response below to render a handlebars template
   //res.render(path.join(__dirname, '../views/index.html'))
-  res.render(path.join('index'))
+  console.log({items: rows, cartCount})
+  res.render('index', {items: rows, cartCount})
 })
 
 router.get('/product/:id', async (req, res) => {
@@ -20,7 +21,7 @@ router.get('/product/:id', async (req, res) => {
 
   // TODO: Convert the response below to render a handlebars template
   //res.render(path.join(__dirname, '../views/product.html'))
-  res.render(path.join('product'))
+  res.render('product', {product, cartCount})
 })
 
 
@@ -46,7 +47,7 @@ router.get('/cart', async (req, res) => {
 
   // TODO: Convert the response below to render a handlebars template
   //res.render(path.join(__dirname, '../views/cart.html'))
-  res.render(path.join('cart'))
+  res.render('cart', {cartItems, total})
 })
 
 
