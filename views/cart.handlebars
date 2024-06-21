@@ -1,6 +1,4 @@
-<!-- 👇Remove this markup when converting to a handlebars template 👇 -->
 
-<!-- 👆Remove this markup when converting to a handlebars template👆 -->
   <header>
   <div class="header-container">
     <a href="/">
@@ -16,14 +14,14 @@
   <section id="cart">
     <div class="cart-items">
 <!-- TODO: 👇Use a handlebars each helper to loop over cart items👇 -->
-     {{#each}}
+      {{#each cart}}
         <div class="cart-item">
     <!-- replace with inventoryId -->
           <a
-            href="/product/{{inventory.id}}"
+            href="/product/{{inventoryId}}"
             class="cart-item-info">
     <!-- replace with product image -->
-            <img src="/images/{{product.image}}" alt="{{product.name}}" />
+            <img src="/images/{{product.image}}" alt="Stratocaster" />
             <div>
     <!-- replace with product name and price -->
               <p>{{product.name}}</p>
@@ -49,17 +47,17 @@
                 Remove
               </button>
             </div>
-<!-- replace with calculatedPrice -->
+            <!-- replace with calculatedPrice -->
             <p>${{calculatedPrice}}</p>
           </div>
         </div>
         <hr />
-      {{#/each}}
+      {{/each}}
 <!-- TODO: 👆Use a handlebars each helper to loop over cart items👆 -->
       <div class="cart-total">
         <p>Total:</p>
 <!-- TODO: Replace with cart total -->
-        <p>$({{cart.total}})</p>
+        <p>${{total}}</p>
       </div>
       <button id="emptyCart">Empty Cart</button>
     </div>
@@ -68,6 +66,3 @@
 <footer>
   <p>&copy; Music Shop</p>
 </footer>
-<!-- 👇Remove this markup when converting to a handlebars template 👇 -->
-
-<!-- 👆Remove this markup when converting to a handlebars template👆 -->

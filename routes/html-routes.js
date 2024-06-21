@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 
   // TODO: Convert the response below to render a handlebars template
   //res.render(path.join(__dirname, '../views/index.html'))
-  console.log({items: rows, cartCount})
+  console.log({item: rows, cartCount})
   res.render('index', {items: rows, cartCount})
 })
 
